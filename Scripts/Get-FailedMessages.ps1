@@ -7,10 +7,16 @@ $Today = Get-Date -Format "MM/dd/yy"
 $LastWeek = (Get-Date).AddDays(-7).ToShortDateString()
 
 #Are we connected to Exchange Online?  If not, connect
-$GetSessions = Get-PSSession | Select-Object -Property State, Name
-$IsConnected = (@($GetSessions) -like '@{State=Opened; Name=ExchangeOnlineInternalSession*').Count -gt 0
-If ($IsConnected -ne "True") {
-    Connect-ExchangeOnline
+Write-Host "Testing connection to Exchange Online"
+try {
+    Get-Mailbox test@example.com
+}
+catch [System.Management.Automation.CommandNotFoundException]{
+    Write-Warning "Connecting to Exchange Online... please authenticate"
+    Connect-ExchangeOnline 
+}
+catch [Microsoft.Exchange.Configuration.Tasks.ManagementObjectNotFoundException]{
+    Write-Warning "Already connected to Exchange Online"
 }
 Write-Host "Connected to Exchange Online, getting messages..."
 
