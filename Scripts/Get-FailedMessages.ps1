@@ -16,7 +16,7 @@ catch [System.Management.Automation.CommandNotFoundException]{
     Connect-ExchangeOnline 
 }
 catch [Microsoft.Exchange.Configuration.Tasks.ManagementObjectNotFoundException]{
-    Write-Warning "Already connected to Exchange Online"
+    Write-Warning "Already connected to Exchange Online.  Please use Disconnect-ExchangeOnline to disconnect when finished."
 }
 Write-Host "Connected to Exchange Online, getting messages..."
 
