@@ -47,7 +47,7 @@ fi
 if [[ \"`pkgutil --files com.apple.pkg.RosettaUpdateAuto`\" == \"\" ]]
   then 
     fancy_echo 'Rosetta not detected, installing...'
-    sudo softwareupdate --install-rosetta –-agree-to-license
+    sudo softwareupdate --install-rosetta --agree-to-license
   else
     fancy_echo 'Rosetta detected, skipping installation...'
 fi 
@@ -58,3 +58,5 @@ pwsh -Command 'Install-Module -Name PowerShellGet'
 pwsh -Command 'Install-Module -Name PSWSMan'
 sudo pwsh -Command 'Install-WSMan'
 pwsh -Command 'Install-Module -Name ExchangeOnlineManagement -AllowPrerelease'
+
+echo "Done! You can now use powershell"
