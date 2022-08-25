@@ -59,4 +59,4 @@ pwsh -Command 'Install-Module -Name PSWSMan'
 sudo pwsh -Command 'Install-WSMan'
 pwsh -Command 'Install-Module -Name ExchangeOnlineManagement -AllowPrerelease'
 
-echo "Done! You can now use powershell"
+echo "Done! You can now use powershell.  Just type 'pwsh' and get shellin' power!"
