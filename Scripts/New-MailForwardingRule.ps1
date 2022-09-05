@@ -95,7 +95,7 @@ $EndDateTime = $EndDateTime.AddHours(-10)
 
 #Create the inbox rule for the From address
 Write-Host "Attempting to create inbox rule for $From"
-$InboxRule = New-InboxRule -Mailbox $From -Name "Forwarding to $To Rule" -RedirectTo $To -ReceivedAfterDate $StartDateTime -ReceivedBeforeDate $EndDateTime -DeliverToMailboxAndForward $KeepMessages
+$InboxRule = New-InboxRule -Mailbox $From -Name "Forwarding to $To Rule" -RedirectTo $To -ReceivedAfterDate $StartDateTime -ReceivedBeforeDate $EndDateTime
 Write-Host "Inbox rule created: " $InboxRule
 
 #Ask whether to disconnect from Exchange Online
