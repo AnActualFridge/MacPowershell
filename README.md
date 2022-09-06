@@ -15,3 +15,5 @@ Next run the SetupPowershell.sh file:
 - and follow the prompts
 
 Now you can run powershell by typing `pwsh` in terminal.
+To start an Exchange Online session, type Connect-ExchangeOnline.  
+You may have to authorize yourself through your browser.
